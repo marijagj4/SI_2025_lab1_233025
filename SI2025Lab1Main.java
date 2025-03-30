@@ -64,8 +64,10 @@ class TaskManager {
 
     // 1. Remove a task by name
     public void removeTask(String name) {
- 	tasks.removeIf(task -> task.getName().equalsIgnoreCase(name));   
+
+ 	  tasks.removeIf(task -> task.getName().equalsIgnoreCase(name));   
  }
+
 
     // 2. Find all completed tasks
     public List<Task> getCompletedTasks() {
@@ -80,8 +82,9 @@ class TaskManager {
 
     // 4. Sort tasks by priority
     public void sortTasksByPriority() {
-        // TODO: Implement sorting by priority logic
-    }
+
+ 	tasks.sort(Comparator.comparing(Task::getPriority));    
+}
 
     // 5. Filter tasks by category
     public List<Task> filterByCategory(String category) {
@@ -120,7 +123,11 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
+
+	manager.sortTasksByPriority();
+
 manager.removeTask("Submit assignment");
+
         manager.printTasks();
     }
 }
