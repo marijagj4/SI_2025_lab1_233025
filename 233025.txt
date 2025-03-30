@@ -1,0 +1,31 @@
+git fetch origin -> prezemanje na najnovite promeni od remote repozitoriumot
+git checkout 1-remove-a-task-by-name -> se prefrlam na prvata granka 
+git add . -> gi prakjam na scena promenite
+git commit -m "implemented removeTask"
+git push origin -> prakjam na GitHub
+
+git checkout 4-sort-tasks-by-priority -> se prefrlam na vtorata granka sto ja odbrav(granka broj 4)
+git add . -> gi prakjam na scena promenite
+git commit -m "implemented sortTasksByPriority"
+git push origin -> prakjam na GitHub
+
+tuka se slucuvaat konflikti, pa odluciv da gi resam direktno preku GitHub editor
+
+git checkout 8-get-tasks-by-category -> se prefrlam na tretata granka sto ja odbrav(granka so br 8)
+git add . -> gi prakjam na scena promenite
+git commit -m "implemented getTasksByCategory"
+git push origin -> prakjam na GitHub
+
+git checkout master -> se prefrlam na master
+git merge 8-get-tasks-by-category -> ja spojuvam grankata so master
+
+git pull -> povlekuvanje a najnovi promeni od GitHub
+Se pojavi konflikt, koj go resiv koristejḱi Java editor.
+
+git add . -> gi prakjam promenite na scena
+git commit -m "resolved merge conflict"
+git push origin master -> Gi isprakjam site promeni na GitHub.
+
+
+git log --oneline --graph --all -> Prikaz na istorijata na commit-ite vo oblik na graf.
+nano logs.txt -> kreiram datoteka logs.txt i vnatre gi stavam site logovi
