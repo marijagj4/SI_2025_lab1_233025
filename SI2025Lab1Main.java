@@ -74,9 +74,10 @@ class TaskManager {
     }
 
     // 3. List tasks sorted by name
-     public void sortTasksByName() {
-        tasks.sort(Comparator.comparing(Task::getName));
-    }
+    public void removeTask(String name) {
+    tasks.removeIf(task -> task.getName().equals(name));
+}
+
 
     // 4. Sort tasks by priority
     public void sortTasksByPriority() {
@@ -122,7 +123,7 @@ public class SI2025Lab1Main {
         // MISSING: Calls to the new methods that will be implemented
 System.out.println("Tasks before sorting:");
         manager.printTasks();
-
+        manager.removeTask();
         manager.sortTasksByName();
         System.out.println("\nTasks sorted by name:");
         manager.printTasks();
