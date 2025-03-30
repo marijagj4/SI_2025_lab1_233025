@@ -74,9 +74,16 @@ class TaskManager {
     }
 
     // 3. List tasks sorted by name
+<<<<<<< HEAD
     public void sortTasksByName() {
         // TODO: Implement sorting logic
     }
+=======
+    public void removeTask(String name) {
+    tasks.removeIf(task -> task.getName().equals(name));
+}
+
+>>>>>>> 3-list-tasks-sorted-by-namee
 
     // 4. Sort tasks by priority
     // TODO: Implement sorting by priority logic
@@ -126,12 +133,20 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
+<<<<<<< HEAD
 System.out.println("\nTask count per category:");
         System.out.println(manager.countTasksPerCategory());
 
 	manager.sortTasksByPriority();
         System.out.println("\nTasks sorted by priority:");
         
+=======
+System.out.println("Tasks before sorting:");
+        manager.printTasks();
+        manager.removeTask();
+        manager.sortTasksByName();
+        System.out.println("\nTasks sorted by name:");
+>>>>>>> 3-list-tasks-sorted-by-namee
         manager.printTasks();
     }
 }
