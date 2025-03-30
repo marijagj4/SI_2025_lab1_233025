@@ -64,10 +64,7 @@ class TaskManager {
 
     // 1. Remove a task by name
     public void removeTask(String name) {
-          public void removeTask(String name) {
-    tasks.removeIf(task -> task.getName().equals(name));
-}
-
+        // TODO: Implement removal logic
     }
 
     // 2. Find all completed tasks
@@ -77,17 +74,14 @@ class TaskManager {
     }
 
     // 3. List tasks sorted by name
-
     public void sortTasksByName() {
-   tasks.sort(Comparator.comparing(Task::getPriority));    }
-   
+        // TODO: Implement sorting logic
+    }
 
     // 4. Sort tasks by priority
-    // TODO: Implement sorting by priority logic
-	public void sortTasksByPriority() {
-        tasks.sort(Comparator.comparing(Task::getPriority));
+    public void sortTasksByPriority() {
+        // TODO: Implement sorting by priority logic
     }
-	
 
     // 5. Filter tasks by category
     public List<Task> filterByCategory(String category) {
@@ -102,18 +96,19 @@ class TaskManager {
     }
 
     // 7. Count tasks per category
-   public Map<String, Integer> countTasksPerCategory() {
-        Map<String, Integer> categoryCount = new HashMap<>();
-        for (Task task : tasks) {
-            categoryCount.put(task.getCategory(), categoryCount.getOrDefault(task.getCategory(), 0) + 1);
-        }
-        return categoryCount;
+    public Map<String, Integer> countTasksPerCategory() {
+        // TODO: Implement counting logic
+        return new HashMap<>();
     }
-
 
     // 8. Mark a task as completed by name
     public void markTaskCompleted(String name) {
-        // TODO: Implement completion logic
+        for (Task task : tasks) {
+            if (task.getName().equalsIgnoreCase(name)) {
+                task.complete();
+                break;
+            }
+        }
     }
 
     // 9. Mark all tasks in a category as completed
@@ -130,17 +125,7 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
-System.out.println("\nTask count per category:");
-        System.out.println(manager.countTasksPerCategory());
-
-	manager.sortTasksByPriority();
-        System.out.println("\nTasks sorted by priority:");
-        
-System.out.println("Tasks before sorting:");
-        manager.printTasks();
-        manager.removeTask();
-        manager.sortTasksByName();
-        System.out.println("\nTasks sorted by name:");
+manager.markTaskCompleted("Write report");
         manager.printTasks();
     }
 }
