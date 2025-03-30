@@ -74,14 +74,16 @@ class TaskManager {
     }
 
     // 3. List tasks sorted by name
-     public void sortTasksByName() {
-        tasks.sort(Comparator.comparing(Task::getName));
+    public void sortTasksByName() {
+        // TODO: Implement sorting logic
     }
 
     // 4. Sort tasks by priority
-    public void sortTasksByPriority() {
-        // TODO: Implement sorting by priority logic
+    // TODO: Implement sorting by priority logic
+	public void sortTasksByPriority() {
+        tasks.sort(Comparator.comparing(Task::getPriority));
     }
+	
 
     // 5. Filter tasks by category
     public List<Task> filterByCategory(String category) {
@@ -96,10 +98,14 @@ class TaskManager {
     }
 
     // 7. Count tasks per category
-    public Map<String, Integer> countTasksPerCategory() {
-        // TODO: Implement counting logic
-        return new HashMap<>();
+   public Map<String, Integer> countTasksPerCategory() {
+        Map<String, Integer> categoryCount = new HashMap<>();
+        for (Task task : tasks) {
+            categoryCount.put(task.getCategory(), categoryCount.getOrDefault(task.getCategory(), 0) + 1);
+        }
+        return categoryCount;
     }
+}
 
     // 8. Mark a task as completed by name
     public void markTaskCompleted(String name) {
@@ -120,11 +126,12 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
-System.out.println("Tasks before sorting:");
-        manager.printTasks();
+System.out.println("\nTask count per category:");
+        System.out.println(manager.countTasksPerCategory());
 
-        manager.sortTasksByName();
-        System.out.println("\nTasks sorted by name:");
+	manager.sortTasksByPriority();
+        System.out.println("\nTasks sorted by priority:");
+        
         manager.printTasks();
     }
 }
