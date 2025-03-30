@@ -80,8 +80,8 @@ class TaskManager {
 
     // 4. Sort tasks by priority
     public void sortTasksByPriority() {
-        tasks.sort(Comparator.comparing(Task::getPriority));
-    }
+ 	tasks.sort(Comparator.comparing(Task::getPriority));    
+}
 
     // 5. Filter tasks by category
     public List<Task> filterByCategory(String category) {
@@ -120,7 +120,7 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
-manager.sortTasksByPriority();
+	manager.sortTasksByPriority();
         manager.printTasks();
     }
 }
