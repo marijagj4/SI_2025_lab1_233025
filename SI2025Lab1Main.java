@@ -100,8 +100,9 @@ return tasks.sort(Comparator.comparing(Task::getPriority));
     // 7. Count tasks per category
     public Map<String, Integer> countTasksPerCategory() {
         // TODO: Implement counting logic
-        return new HashMap<>();
-    }
+return tasks.stream().collect(Collectors.groupingBy(Task::getCategory, Collectors.reducing(0, e -> 1, Integer::sum)));
+
+           }
 
     // 8. Mark a task as completed by name
     public void markTaskCompleted(String name) {
