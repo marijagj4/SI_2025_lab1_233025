@@ -1,0 +1,15 @@
+*   de92fa9 (HEAD -> master, origin/master, origin/HEAD) Merge branch '7-count-tasks-per-category'
+|\
+| * 594fe99 (origin/7-count-tasks-per-category, 7-count-tasks-per-category) Implement count task by priority
+* |   9b70340 Merge pull request #11 from marijagj4/4-sort-tasks-by-priority
+|\ \
+| * | 70f4d08 (origin/4-sort-tasks-by-priority, 4-sort-tasks-by-priority) Implement sort task by priority
+| |/
+* |   84a8654 Merge pull request #10 from marijagj4/1-remove-a-task-by-name
+|\ \
+| |/
+|/|
+| * b397c3c (origin/1-remove-a-task-by-name, 1-remove-a-task-by-name) Implement remove a task by name
+|/
+* 82d2f6e Add starter code
+* d924be7 Initial commit

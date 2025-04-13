@@ -1,0 +1,32 @@
+13. git fetch origin
+git checkout 1-
+git fetch origin
+git checkout 4-
+git fetch origin
+git checkout 7-
+
+14. git checkout 1-
+
+15.return tasks.removeIf(task -> task.getName().equals(name));
+ git add .
+git commit -m "Implement remove a task by name"
+git push origin 1-
+
+16. 
+return tasks.sort(Comparator.comparing(Task::getPriority));
+
+git add .
+ git commit -m "Implement sort task by priority"
+git push origin 4-
+
+17.
+git add .
+return tasks.stream().collect(Collectors.groupingBy(Task::getCategory, Collectors.reducing(0, e -> 1, Integer::sum)));
+git push origin 7-
+
+22.git checkout master
+git merge 7-
+git push origin master
+
+23.
+27.git clone 
